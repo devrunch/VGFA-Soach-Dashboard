@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.or-gradient {
+  background: rgb(241, 76, 31);
+  background: -moz-linear-gradient(183deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  background: -webkit-linear-gradient(183deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  background: linear-gradient(0deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f14c1f", endColorstr="#fcb045", GradientType=1);
+}
+.or-gradient2 {
+  background: rgb(241, 76, 31);
+  background: -moz-linear-gradient(90deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  background: -webkit-linear-gradient(183deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  background: linear-gradient(90deg, rgba(241, 76, 31, 1) 0%, rgba(252, 176, 69, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f14c1f", endColorstr="#fcb045", GradientType=1);
+}
+
+body{
+  background:#FEFAF6;
+}
