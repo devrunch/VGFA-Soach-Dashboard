@@ -20,6 +20,7 @@ function App() {
     };
     const response = await fetch(baseUrl+"auth/official/me",requestOptions);
     if(response.status === 401) navigate("/login");
+    else navigate("/dashboard");
     const res = await response.json();
     console.log(res)
   }
