@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { toast } from 'react-toastify';
-const baseUrl = "http://vgfa-env-1.eba-brkixzb4.ap-south-1.elasticbeanstalk.com/api/";
+const baseUrl = "https://vfgabackend.outhad.com/api/";
 const state = ["NEW", "APPROVED BY PANCHAYAT", "APPROVED BY GOVERNMENT", "APPROVED", "DISAPPROVED"];
 const Table = ({ data, fetchData }) => {
     const [selectedForm, setSelectedForm] = useState(null);

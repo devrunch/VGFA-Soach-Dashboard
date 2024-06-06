@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-const baseUrl = "http://vgfa-env-1.eba-brkixzb4.ap-south-1.elasticbeanstalk.com/api/";
+const baseUrl = "https://vfgabackend.outhad.com/api/";
 const Register = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('')

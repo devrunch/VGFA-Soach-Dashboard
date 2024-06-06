@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-const baseUrl = "http://vgfa-env-1.eba-brkixzb4.ap-south-1.elasticbeanstalk.com/api/";
+const baseUrl = "https://vfgabackend.outhad.com/api/";
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
