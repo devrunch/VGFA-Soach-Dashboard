@@ -10,9 +10,12 @@ const Register = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
+
   const handleSubmit = async(e) => {
 
     e.preventDefault()
+    setLoading(true)
     const raw = JSON.stringify({
       "email": email,
       "password": password
@@ -28,10 +31,13 @@ const Register = () => {
     let response = await fetch(baseUrl + "auth/official/register", requestOptions)
     if(response.status === 200){
       toast.success('User registered successfully')
+      toast.success("Please Login With your Credetials")
       await new Promise((resolve) => setTimeout(resolve, 4000))
-      navigate('/')
+      navigate('/login')
     }
     response =  await response.json()
+    toast.error("Invalid Credentials")
+    setLoading(false)
 
 
   }
@@ -94,6 +100,7 @@ const Register = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
+                disabled={loading}
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Register
