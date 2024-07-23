@@ -3,6 +3,9 @@ import image from '../assets/soach .png'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+
+import saly from "../assets/Saly-10.png"
+
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 const baseUrl = "https://vfgabackend.outhad.com/api/";
@@ -42,7 +45,8 @@ const Register = () => {
 
   }
   return (
-    <div>
+    <div className='flex h-screen p-8'>
+      <div className='w-[50vw]'>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -101,7 +105,7 @@ const Register = () => {
                 type="submit"
                 onClick={handleSubmit}
                 disabled={loading}
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-[#000842] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Register
               </button>
@@ -110,11 +114,16 @@ const Register = () => {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Already a member?{' '}
-            <Link to="/" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            <Link to="/" className="font-semibold leading-6 text-[#000842] hover:text-indigo-500">
               Login here
             </Link>
           </p>
         </div>
+      </div>
+      </div>
+      <div className='bg-[#000842] w-[50vw] rounded-xl flex flex-col text-white gap-24 p-36 justify-around items-center'>
+        <img src={saly} alt="" />
+        <p className='text-xl text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis in nam provident, excepturi porro accusamus debitis veritatis beatae dolores deleniti. Maiores perspiciatis sequi facere consequuntur ad. Neque, quo eveniet.</p>
       </div>
 
     </div>
