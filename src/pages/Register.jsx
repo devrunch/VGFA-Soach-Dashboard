@@ -412,9 +412,277 @@ const Register = () => {
                 </>
 
               ) : (
-                <form >
-                  <p>Official</p>
-                </form>
+                <form  >
+
+                    {!PanchayatS1 ? (
+                      <>
+                        <p className='text-center text-2xl font-bold my-12'>Panchayat Representative Registration</p>
+                        <div className='w-[60vw] rounded-xl border-[#EDEDED] border-2 '>
+
+                          <div  >
+                            <p className='font-semibold text-2xl border-[#EDEDED] border-b-2 p-6 px-8 m-0'>Profile</p>
+                          </div>
+
+                          <div className='p-8'>
+
+                            <div className='flex gap-8'>
+                              <img src={file} />
+                              <div className='flex flex-col gap-2'>
+                                <h2 className='font-semibold'>Add Profile Picture</h2>
+                                <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
+                                <input type="file" onChange={handleImgChange} />
+                              </div>
+
+                            </div>
+                            <div>
+                              <h2 className='font-semibold border-[#EDEDED] border-b-2 p-4 mt-5'>Personal Information</h2>
+
+                              <div className='flex flex-col gap-4 py-6'>
+                                <div className='flex gap-4'>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                      First Name
+                                    </label>
+                                    <input
+                                      id=""
+                                      name=""
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    />
+                                  </div>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                      Last Name
+                                    </label>
+                                    <input
+                                      id=""
+                                      name=""
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    />
+                                  </div>
+
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Email Address
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="email"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Phone Number
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="text"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Designation
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="text"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Address
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="text"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div>
+                              <h2 className='font-semibold border-[#EDEDED] border-b-2 p-4 mt-5'>Office Information</h2>
+
+                              <div className='flex flex-col gap-4 py-6'>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Panchayat Name
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="text"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                                <div className='flex gap-4'>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                      State
+                                    </label>
+                                    <input
+                                      id=""
+                                      name=""
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    />
+                                  </div>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                      City
+                                    </label>
+                                    <input
+                                      id=""
+                                      name=""
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    />
+                                  </div>
+
+                                </div>
+                                <div>
+                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Office Address
+                                  </label>
+                                  <input
+                                    id=""
+                                    name=""
+                                    type="text"
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                  />
+                                </div>
+                                <button
+                                  onClick={handlePanchayatS1}
+                                  type='button'
+                                  className="flex w-[250px] justify-center rounded-md bg-[#f5705e] p-4  text-base font-semibold leading-6 text-white shadow-sm hover:bg-[#e74b36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 self-end"
+                                >
+                                  Next
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+
+
+                      <div>
+
+                        <>
+                          <p className='text-center text-2xl font-bold my-12'>Document Upload</p>
+                          <div className='w-[60vw] rounded-xl border-[#EDEDED] border-2 '>
+
+                            <div  >
+                              <p className='font-semibold text-2xl border-[#EDEDED] border-b-2 p-6 px-8 m-0'>Verify Your Identity</p>
+                            </div>
+
+                            <div className='p-8 flex flex-col '>
+
+                              <p className='text-[#727476] font-normal'>Upload the required documents to verify your identity and Panchayat affiliation.</p>
+                              <div>
+
+
+                                <div className='flex flex-col gap-4 py-6'>
+                                  <div className='flex gap-4'>
+                                    <div className='w-1/2'>
+                                      <div className=' border-[#EDEDED] border-b-2 '>
+                                        <h2 className='font-semibold  text-xl p-4 mt-5'>Address Proof</h2>
+                                        <p className='text-[#727476]  p-4 font-normal'>eg: bill, Aadhar card.</p>
+                                      </div>
+                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
+
+                                        <img src={file2} />
+                                        <div className='flex flex-col gap-2 justify-center '>
+                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                    <div className='w-1/2'>
+                                      <div className=' border-[#EDEDED] border-b-2 '>
+                                        <h2 className='font-semibold   text-xl p-4 mt-5'>Identity Proof</h2>
+                                        <p className='text-[#727476]  p-4 font-normal'>e.g., Aadhaar Card, Voter ID</p>
+                                      </div>
+                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
+
+                                        <img src={file2} />
+                                        <div className='flex flex-col gap-2 justify-center '>
+                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+                                </div>
+                                <div className='flex flex-col gap-4 py-6'>
+                                  <div className='flex gap-4'>
+                                    <div className='w-1/2'>
+                                      <div className=' border-[#EDEDED] border-b-2 '>
+                                        <h2 className='font-semibold  text-xl p-4 mt-5'>Panchayat Resolution</h2>
+                                        <p className='text-[#727476]  p-4 font-normal'>(if applicable)</p>
+                                      </div>
+                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
+
+                                        <img src={file2} />
+                                        <div className='flex flex-col gap-2 justify-center '>
+                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                        </div>
+
+                                      </div>
+                                    </div>
+
+
+                                  </div>
+
+                                </div>
+                                
+                              </div>
+                              <button
+                                  onClick={handlePanchayatS1}
+                                  type='submit'
+                                  className="flex w-[250px] justify-center rounded-md bg-[#f5705e] p-4  text-base font-semibold leading-6 text-white shadow-sm hover:bg-[#e74b36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 self-end"
+                                >
+                                  Submit
+                                </button>
+                            </div>
+                            
+                          </div>
+                        </>
+
+                      </div>
+
+
+                    )}
+
+
+                  </form>
               )}
               <div>
               </div>
