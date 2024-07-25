@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import image from '../assets/soach .png'
+import image from '../assets/soach.png'
 import uploadimg from '../assets/uploadimg.png'
 import uploadimg2 from '../assets/uploadimg2.png'
 
@@ -10,11 +10,12 @@ import { useNavigate } from 'react-router-dom';
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 const baseUrl = "https://vfgabackend.outhad.com/api/";
+
 const Register = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedDesignation, setSelectedDesignation] = useState('');
   const [PanchayatS1, setPanchayatS1] = useState(false);
@@ -22,10 +23,24 @@ const Register = () => {
   const [file, setFile] = useState(uploadimg);
   const [file2, setFile2] = useState(uploadimg2);
 
+  const [formValues, setFormValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    designation: '',
+    address: '',
+    panchayatName: '',
+    state: '',
+    city: '',
+    officeAddress: ''
+  });
+
   function handleImgChange(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
+
   function handleImgChange2(e) {
     console.log(e.target.files);
     setFile2(URL.createObjectURL(e.target.files[0]));
@@ -35,8 +50,8 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     const raw = JSON.stringify({
-      "email": email,
-      "password": password
+      email: email,
+      password: password
     });
 
     const requestOptions = {
@@ -47,12 +62,6 @@ const Register = () => {
     };
 
     let response = await fetch(baseUrl + "auth/official/register", requestOptions);
-    // if (response.status === 200) {
-    //   toast.success('User registered successfully');
-    //   toast.success("Please Login With your Credentials");
-    //   await new Promise((resolve) => setTimeout(resolve, 4000));
-    //   navigate('/login');
-    // }
     response = await response.json();
     toast.error("Invalid Credentials");
     setLoading(false);
@@ -64,10 +73,27 @@ const Register = () => {
 
   const handleChoice = (e) => {
     setSelectedDesignation(selectedOption);
-  }
+  };
+
   const handlePanchayatS1 = (e) => {
-    setPanchayatS1(true);
-  }
+    const {
+      firstName, lastName, email, phoneNumber, designation, address,
+      panchayatName, state, city, officeAddress
+    } = formValues;
+
+    if (!firstName || !lastName || !email || !phoneNumber || !designation || !address ||
+      !panchayatName || !state || !city || !officeAddress)  {
+      toast.error("Please fill all the fields");
+    } else {
+      setPanchayatS1(true);
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
 
   return (
     <div className='flex min-h-screen p-8'>
@@ -156,7 +182,8 @@ const Register = () => {
                               <div className='flex flex-col gap-2'>
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
-                                <input type="file" onChange={handleImgChange} />
+                                <input
+                                  onChange={handleInputChange}  type="file" onChange={handleImgChange} />
                               </div>
 
                             </div>
@@ -170,8 +197,10 @@ const Register = () => {
                                       First Name
                                     </label>
                                     <input
-                                      id=""
-                                      name=""
+                                  onChange={handleInputChange} 
+                                   
+                                      id="firstName"
+                                      name="firstName"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -182,8 +211,10 @@ const Register = () => {
                                       Last Name
                                     </label>
                                     <input
-                                      id=""
-                                      name=""
+                                  onChange={handleInputChange} 
+                                 
+                                      id="lastName"
+                                      name="lastName"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -192,12 +223,15 @@ const Register = () => {
 
                                 </div>
                                 <div>
+
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                     Email Address
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                  
+                                    id="email"
+                                    name="email"
                                     type="email"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -208,8 +242,9 @@ const Register = () => {
                                     Phone Number
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                    id="phoneNumber"
+                                    name="phoneNumber"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -220,8 +255,9 @@ const Register = () => {
                                     Designation
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                    id="designation"
+                                    name="designation"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -232,8 +268,9 @@ const Register = () => {
                                     Address
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                    id="address"
+                                    name="address"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -250,8 +287,9 @@ const Register = () => {
                                     Panchayat Name
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                    id="panchayatName"
+                                    name="panchayatName"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -263,8 +301,9 @@ const Register = () => {
                                       State
                                     </label>
                                     <input
-                                      id=""
-                                      name=""
+                                  onChange={handleInputChange} 
+                                      id="state"
+                                      name="state"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -275,8 +314,9 @@ const Register = () => {
                                       City
                                     </label>
                                     <input
-                                      id=""
-                                      name=""
+                                  onChange={handleInputChange} 
+                                      id="city"
+                                      name="city"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -289,8 +329,9 @@ const Register = () => {
                                     Office Address
                                   </label>
                                   <input
-                                    id=""
-                                    name=""
+                                  onChange={handleInputChange} 
+                                    id="officeAddress"
+                                    name="officeAddress"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -340,7 +381,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -356,7 +398,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -378,7 +421,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -430,7 +474,8 @@ const Register = () => {
                               <div className='flex flex-col gap-2'>
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
-                                <input type="file" onChange={handleImgChange} />
+                                <input
+                                  onChange={handleInputChange}  type="file" onChange={handleImgChange} />
                               </div>
 
                             </div>
@@ -444,6 +489,7 @@ const Register = () => {
                                       First Name
                                     </label>
                                     <input
+                                  onChange={handleInputChange} 
                                       id=""
                                       name=""
                                       type="text"
@@ -456,6 +502,7 @@ const Register = () => {
                                       Last Name
                                     </label>
                                     <input
+                                  onChange={handleInputChange} 
                                       id=""
                                       name=""
                                       type="text"
@@ -470,6 +517,7 @@ const Register = () => {
                                     Email Address
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="email"
@@ -482,6 +530,7 @@ const Register = () => {
                                     Phone Number
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="text"
@@ -494,6 +543,7 @@ const Register = () => {
                                     Designation
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="text"
@@ -506,6 +556,7 @@ const Register = () => {
                                     Address
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="text"
@@ -524,6 +575,7 @@ const Register = () => {
                                     Panchayat Name
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="text"
@@ -537,6 +589,7 @@ const Register = () => {
                                       State
                                     </label>
                                     <input
+                                  onChange={handleInputChange} 
                                       id=""
                                       name=""
                                       type="text"
@@ -549,6 +602,7 @@ const Register = () => {
                                       City
                                     </label>
                                     <input
+                                  onChange={handleInputChange} 
                                       id=""
                                       name=""
                                       type="text"
@@ -563,6 +617,7 @@ const Register = () => {
                                     Office Address
                                   </label>
                                   <input
+                                  onChange={handleInputChange} 
                                     id=""
                                     name=""
                                     type="text"
@@ -614,7 +669,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -630,7 +686,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -652,7 +709,8 @@ const Register = () => {
                                         <div className='flex flex-col gap-2 justify-center '>
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input type="file" className=' text-center' onChange={handleImgChange2} />
+                                          <input
+                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
