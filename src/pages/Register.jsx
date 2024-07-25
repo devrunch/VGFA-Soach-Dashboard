@@ -75,6 +75,16 @@ const Register = () => {
     setSelectedDesignation(selectedOption);
   };
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhoneNumber = (phoneNumber) => {
+    const phoneRegex = /^[0-9]{10}$/; 
+    return phoneRegex.test(phoneNumber);
+  };
+
   const handlePanchayatS1 = (e) => {
     const {
       firstName, lastName, email, phoneNumber, designation, address,
@@ -82,8 +92,12 @@ const Register = () => {
     } = formValues;
 
     if (!firstName || !lastName || !email || !phoneNumber || !designation || !address ||
-      !panchayatName || !state || !city || !officeAddress)  {
+      !panchayatName || !state || !city || !officeAddress) {
       toast.error("Please fill all the fields");
+    } else if (!validateEmail(email)) {
+      toast.error("Please enter a valid email address");
+    } else if (!validatePhoneNumber(phoneNumber)) {
+      toast.error("Please enter a valid phone number");
     } else {
       setPanchayatS1(true);
     }
