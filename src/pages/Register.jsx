@@ -475,7 +475,7 @@ const Register = () => {
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
                                 <input
-                                   type="file" onChange={handleImgChange} />
+                                    type="file" onChange={handleImgChange} />
                               </div>
 
                             </div>
@@ -490,8 +490,9 @@ const Register = () => {
                                     </label>
                                     <input
                                   onChange={handleInputChange} 
-                                      id=""
-                                      name=""
+                                   
+                                      id="firstName"
+                                      name="firstName"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -503,8 +504,9 @@ const Register = () => {
                                     </label>
                                     <input
                                   onChange={handleInputChange} 
-                                      id=""
-                                      name=""
+                                 
+                                      id="lastName"
+                                      name="lastName"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -513,13 +515,15 @@ const Register = () => {
 
                                 </div>
                                 <div>
+
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                     Email Address
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                  
+                                    id="email"
+                                    name="email"
                                     type="email"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -531,8 +535,8 @@ const Register = () => {
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                    id="phoneNumber"
+                                    name="phoneNumber"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -544,8 +548,8 @@ const Register = () => {
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                    id="designation"
+                                    name="designation"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -557,8 +561,8 @@ const Register = () => {
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                    id="address"
+                                    name="address"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -576,8 +580,8 @@ const Register = () => {
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                    id="panchayatName"
+                                    name="panchayatName"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -590,8 +594,8 @@ const Register = () => {
                                     </label>
                                     <input
                                   onChange={handleInputChange} 
-                                      id=""
-                                      name=""
+                                      id="state"
+                                      name="state"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -603,8 +607,8 @@ const Register = () => {
                                     </label>
                                     <input
                                   onChange={handleInputChange} 
-                                      id=""
-                                      name=""
+                                      id="city"
+                                      name="city"
                                       type="text"
                                       required
                                       className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -618,8 +622,8 @@ const Register = () => {
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
-                                    id=""
-                                    name=""
+                                    id="officeAddress"
+                                    name="officeAddress"
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
@@ -670,7 +674,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                   type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
