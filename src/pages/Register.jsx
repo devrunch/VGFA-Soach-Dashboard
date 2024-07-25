@@ -183,7 +183,7 @@ const Register = () => {
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
                                 <input
-                                  onChange={handleInputChange}  type="file" onChange={handleImgChange} />
+                                    type="file" onChange={handleImgChange} />
                               </div>
 
                             </div>
@@ -382,7 +382,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -399,7 +399,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -422,7 +422,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -475,7 +475,7 @@ const Register = () => {
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
                                 <input
-                                  onChange={handleInputChange}  type="file" onChange={handleImgChange} />
+                                   type="file" onChange={handleImgChange} />
                               </div>
 
                             </div>
@@ -670,7 +670,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                   type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -687,7 +687,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
@@ -710,7 +710,7 @@ const Register = () => {
                                           <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                           <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
                                           <input
-                                  onChange={handleInputChange}  type="file" className=' text-center' onChange={handleImgChange2} />
+                                    type="file" className=' text-center' onChange={handleImgChange2} />
                                         </div>
 
                                       </div>
