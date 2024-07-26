@@ -157,7 +157,7 @@ const Register = () => {
 
                   <p className="mt-10 text-center text-sm text-gray-500">
                     Already a member?{' '}
-                    <Link to="/" className="font-semibold leading-6 text-[#f5705e] hover:text-indigo-500">
+                    <Link to="/login" className="font-semibold leading-6 text-[#f5705e] hover:text-indigo-500">
                       Login here
                     </Link>
                   </p>
@@ -474,7 +474,7 @@ const Register = () => {
 
                     {!PanchayatS1 ? (
                       <>
-                        <p className='text-center text-2xl font-bold my-12'>Panchayat Representative Registration</p>
+                        <p className='text-center text-2xl font-bold my-12'>Government Official Registration</p>
                         <div className='w-[60vw] rounded-xl border-[#EDEDED] border-2 '>
 
                           <div  >
@@ -484,7 +484,7 @@ const Register = () => {
                           <div className='p-8'>
 
                             <div className='flex gap-8'>
-                              <img src={file} />
+                              <img src={file} className='rounded-full w-[110px] h-[110px] ' />
                               <div className='flex flex-col gap-2'>
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
@@ -590,7 +590,7 @@ const Register = () => {
                               <div className='flex flex-col gap-4 py-6'>
                                 <div>
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Panchayat Name
+                                    Office Name
                                   </label>
                                   <input
                                   onChange={handleInputChange} 
@@ -670,7 +670,7 @@ const Register = () => {
 
                             <div className='p-8 flex flex-col '>
 
-                              <p className='text-[#727476] font-normal'>Upload the required documents to verify your identity and Panchayat affiliation.</p>
+                              <p className='text-[#727476] font-normal'>Upload the required documents to verify your identity and affiliation.</p>
                               <div>
 
 
