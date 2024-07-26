@@ -137,7 +137,7 @@ const Register = () => {
                       id="options"
                       value={selectedOption}
                       onChange={handleOptionChange}
-                      className="block w-[500px] bg-[#FEFAF6] rounded-md border-0 p-4  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                      className="block w-[500px] bg-[#fff] rounded-md border-0 p-4  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                     >
                       <option value="">Select an option</option>
                       <option value="panchayat">Panchayat</option>
@@ -217,7 +217,7 @@ const Register = () => {
                                       name="firstName"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
                                   <div className='w-1/2'>
@@ -231,7 +231,7 @@ const Register = () => {
                                       name="lastName"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
 
@@ -248,7 +248,7 @@ const Register = () => {
                                     name="email"
                                     type="email"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -261,7 +261,7 @@ const Register = () => {
                                     name="phoneNumber"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -274,7 +274,7 @@ const Register = () => {
                                     name="designation"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -287,7 +287,7 @@ const Register = () => {
                                     name="address"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                               </div>
@@ -306,7 +306,7 @@ const Register = () => {
                                     name="panchayatName"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div className='flex gap-4'>
@@ -320,7 +320,7 @@ const Register = () => {
                                       name="state"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
                                   <div className='w-1/2'>
@@ -333,7 +333,7 @@ const Register = () => {
                                       name="city"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
 
@@ -348,7 +348,7 @@ const Register = () => {
                                     name="officeAddress"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <button
@@ -509,7 +509,7 @@ const Register = () => {
                                       name="firstName"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
                                   <div className='w-1/2'>
@@ -523,7 +523,7 @@ const Register = () => {
                                       name="lastName"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
 
@@ -540,7 +540,7 @@ const Register = () => {
                                     name="email"
                                     type="email"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -553,7 +553,7 @@ const Register = () => {
                                     name="phoneNumber"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -566,7 +566,7 @@ const Register = () => {
                                     name="designation"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div>
@@ -579,7 +579,7 @@ const Register = () => {
                                     name="address"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                               </div>
@@ -598,7 +598,7 @@ const Register = () => {
                                     name="panchayatName"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <div className='flex gap-4'>
@@ -612,7 +612,7 @@ const Register = () => {
                                       name="state"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
                                   <div className='w-1/2'>
@@ -625,7 +625,7 @@ const Register = () => {
                                       name="city"
                                       type="text"
                                       required
-                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                     />
                                   </div>
 
@@ -640,7 +640,7 @@ const Register = () => {
                                     name="officeAddress"
                                     type="text"
                                     required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#FEFAF6]"
+                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
                                 <button
