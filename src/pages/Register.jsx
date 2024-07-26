@@ -474,7 +474,7 @@ const Register = () => {
 
                     {!PanchayatS1 ? (
                       <>
-                        <p className='text-center text-2xl font-bold my-12'>Panchayat Representative Registration</p>
+                        <p className='text-center text-2xl font-bold my-12'>Government Official Registration</p>
                         <div className='w-[60vw] rounded-xl border-[#EDEDED] border-2 '>
 
                           <div  >
@@ -484,7 +484,7 @@ const Register = () => {
                           <div className='p-8'>
 
                             <div className='flex gap-8'>
-                              <img src={file} />
+                              <img src={file} className='rounded-full w-[110px] h-[110px] ' />
                               <div className='flex flex-col gap-2'>
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>

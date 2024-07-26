@@ -43,7 +43,7 @@ const Login = () => {
   }
   return (
     <div className='flex h-screen p-8'>
-      <div className='w-[50vw]'>
+      
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -52,17 +52,16 @@ const Login = () => {
             src={image}
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign in to your account
+          <h2 className="mt-10 text-center text-3xl font-medium leading-9 tracking-tight text-gray-900">
+            Log - in
           </h2>
-        </div>
        
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+              <label htmlFor="email" className="block text-base font-medium leading-6 text-[#5F5F5F]">
+                Username
               </label>
               <div className="mt-2">
                 <input
@@ -80,10 +79,10 @@ const Login = () => {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="password" className="block text-base font-medium leading-6 text-[#5F5F5F]">
                   Password
                 </label>
-                
+               
               </div>
               <div className="mt-2">
                 <input
@@ -97,6 +96,9 @@ const Login = () => {
                   className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
+              <p htmlFor="email" className="block text-sm float-end mt-4 mb-12 underline font-medium leading-6 text-[#9C9AA5]">
+                Forgot Password ?
+              </p>
             </div>
 
             <div>
@@ -104,28 +106,31 @@ const Login = () => {
                 type="submit"
                 onClick={handleSubmit}
                 disabled={loading}
-                className="flex w-full justify-center rounded-md bg-[#000842] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                 className="flex w-full justify-center rounded-md bg-[#f5705e] p-4  text-base font-semibold leading-6 text-white shadow-sm hover:bg-[#e74b36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 self-end"
               >
-                Sign in
+                Log-in
               </button>
             </div>
           </form>
 
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{' '}
-            <Link to="/register" className="font-semibold leading-6 text-[#000842] hover:text-indigo-500">
-              Register Yourself
+          <p className="mt-10 text-center text-base text-gray-500">
+            Don't have an account?{' '}
+            <Link to="/register" className="font-semibold leading-6 mx-1 text-[#e74b36] hover:text-indigo-500">
+              Register
             </Link>
           </p>
         </div>
       </div>
+      
+      <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
+        <p className="block text-sm float-end mt-4 mb-12 font-medium leading-6 text-[#9C9AA5]">
+        By signing up to create an account I accept Company’s
+        <span className='text-black'> Terms of use & Privacy Policy.</span>
+        </p>
       </div>
-      <div 
-      className='bg-[#000842] w-[50vw] rounded-xl flex flex-col text-white gap-24 p-36 justify-around items-center'
-      >
-        <img src={saly} alt="" />
-        <p className='text-xl text-center'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat officiis in nam provident, excepturi porro accusamus debitis veritatis beatae dolores deleniti. Maiores perspiciatis sequi facere consequuntur ad. Neque, quo eveniet.</p>
       </div>
+    
+      
     </div>
   )
 }
