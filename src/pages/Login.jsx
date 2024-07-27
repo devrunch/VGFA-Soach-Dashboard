@@ -123,9 +123,9 @@ const Login = () => {
       </div>
       
       <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
-        <p className="block text-sm float-end mt-4 mb-12 font-medium leading-6 text-[#9C9AA5]">
+        <p className="block text-sm float-end mt-4 mb-12 font-medium leading-6 text-[#9C9AA5] text-center">
         By signing up to create an account I accept Company’s
-        <span className='text-black'> Terms of use & Privacy Policy.</span>
+        <span className='text-black text-center'> Terms of use & Privacy Policy.</span>
         </p>
       </div>
       </div>
