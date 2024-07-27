@@ -399,7 +399,7 @@ const Register = () => {
                           <div className='p-8'>
 
                             <div className='flex gap-8'>
-                              <img src={file} />
+                              <img className='w-[100px] h-[100px] rounded-full' src={file} />
                               <div className='flex flex-col gap-2'>
                                 <h2 className='font-semibold'>Add Profile Picture</h2>
                                 <p className='text-[#727476] font-normal'>upload (.jpg, .jpeg, .png) file</p>
