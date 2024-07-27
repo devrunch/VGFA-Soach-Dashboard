@@ -52,7 +52,7 @@ const Login = () => {
             src={image}
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-3xl font-medium leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-3xl font-medium leading-9 tracking-tight text-gray-900 ml-[-30px]">
             Log - in
           </h2>
        
