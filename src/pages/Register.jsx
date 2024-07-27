@@ -3,6 +3,7 @@ import image from '../assets/soach.png'
 import uploadimg from '../assets/uploadimg.png'
 import uploadimg2 from '../assets/uploadimg2.png'
 
+import '../css/style.css'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +18,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedDesignation, setSelectedDesignation] = useState('');
   const [PanchayatS1, setPanchayatS1] = useState(false);
 
@@ -67,9 +69,14 @@ const Register = () => {
     setLoading(false);
   };
 
-  const handleOptionChange = (e) => {
-    setSelectedOption(e.target.value);
+  const handleOptionChange = (value) => {
+    setSelectedOption(value);
+    setIsOpen(false); // Close the dropdown after selection
   };
+  const options = [
+    { id: '0', value: 'panchayat', label: 'Panchayat' },
+    { id: '1', value: '1', label: 'Official' },
+  ];
 
   const handleChoice = (e) => {
     setSelectedDesignation(selectedOption);
@@ -130,10 +137,10 @@ const Register = () => {
               <p className='text-[#727476] text-center p-4 font-normal'>Please select your role to proceed with registration.</p>
 
 
-              <div className=" sm:mx-auto sm:w-full flex flex-col items-center justify-center gap-16">
+              <div className=" sm:mx-auto sm:w-full flex flex-col items-center justify-center gap-32">
                 <div>
-                  <div className="mt-2">
-                    <select
+                  <div className="mt-2 w-[103rem] ">
+                    {/* <select
                       id="options"
                       value={selectedOption}
                       onChange={handleOptionChange}
@@ -142,7 +149,47 @@ const Register = () => {
                       <option value="">Select an option</option>
                       <option value="panchayat">Panchayat</option>
                       <option value="official">Government Official</option>
-                    </select>
+                    </select> */}
+
+
+<div className="relative select-box rounded-lg">
+      <div
+        className="select-box__current rounded-lg"
+        tabIndex="1"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <div className="select-box__value p-3">
+          {selectedOption ? (
+            options.find(option => option.value === selectedOption)?.label
+          ) : (
+            'Select an Option'
+          )}
+        </div>
+        <img
+          className="select-box__icon"
+          src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+          alt="Arrow Icon"
+          aria-hidden="true"
+        />
+      </div>
+      <ul className={`select-box__list ${isOpen ? 'show' : ''}`}>
+        {options.map(option => (
+          <li key={option.id}>
+            <label
+              className="select-box__option"
+              htmlFor={option.id}
+              onClick={() => handleOptionChange(option.value)}
+            >
+              {option.label}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+
+
+
                   </div>
                 </div>
                 <div>
