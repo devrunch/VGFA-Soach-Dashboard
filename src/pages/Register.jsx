@@ -472,17 +472,18 @@ const Register = () => {
                                   />
                                 </div>
                                 <div>
-                                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                    Designation
-                                  </label>
-                                  <input
-                                    onChange={handleInputChange}
-                                    id="designation"
-                                    name="designation"
-                                    type="text"
-                                    required
-                                    className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
-                                  />
+                                <select
+                                  id="designation"
+                                  name="designation"
+                                  onChange={handleInputChange}
+                                  required
+                                  className="block w-full rounded-md border-0 p-3 text-sm mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:leading-6 bg-[#fff]"
+                                >
+                                  <option value="">Select Designation</option>
+                                  <option value="Panchayat-Pradhan">Panchayat Pradhan</option>
+                                  <option value="Panchayat-Secretary">Panchayat Secretary</option>
+                                  <option value="Gram-Panchayat-Member">Gram Panchayat Member</option>
+                                </select>
                                 </div>
                                 <div>
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -776,18 +777,22 @@ const Register = () => {
                                 />
                               </div>
                               <div>
-                                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                <label htmlFor="designation" className="block text-sm font-medium leading-6 text-gray-900">
                                   Designation
                                 </label>
-                                <input
-                                  onChange={handleInputChange}
+                                <select
                                   id="designation"
                                   name="designation"
-                                  type="text"
+                                  onChange={handleInputChange}
                                   required
-                                  className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
-                                />
+                                  className="block w-full rounded-md border-0 p-3 text-sm mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:leading-6 bg-[#fff]"
+                                >
+                                  <option value="">Select Designation</option>
+                                  <option value="VDO">VDO</option>
+                                  <option value="BDO">BDO</option>
+                                </select>
                               </div>
+
                               <div>
                                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                   Address
