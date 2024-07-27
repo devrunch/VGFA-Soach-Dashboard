@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className='flex h-screen p-8'>
       
-      <div className="flex min-h-full h-screen flex-1 flex-col justify-around px-6 py-12 lg:px-8">
+      <div className="flex min-h-full h-[95vh] flex-1 flex-col justify-around px-6  lg:px-8">
       
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
