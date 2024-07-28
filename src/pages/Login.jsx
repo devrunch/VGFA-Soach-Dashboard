@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <div className='flex h-screen p-8'>
       
-      <div className="flex min-h-full h-screen flex-1 flex-col justify-around px-6 py-12 lg:px-8">
+      <div className="flex min-h-full h-[95vh] flex-1 flex-col justify-around px-6  lg:px-8">
       
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -52,7 +52,7 @@ const Login = () => {
             src={image}
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-3xl font-medium leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-3xl font-medium leading-9 tracking-tight text-gray-900 ml-[-40px]">
             Log - in
           </h2>
        
@@ -123,9 +123,9 @@ const Login = () => {
       </div>
       
       <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
-        <p className="block text-sm float-end mt-4 mb-12 font-medium leading-6 text-[#9C9AA5]">
+        <p className="block text-sm float-end mt-4 mb-12 font-medium leading-6 text-[#9C9AA5] text-center">
         By signing up to create an account I accept Company’s
-        <span className='text-black'> Terms of use & Privacy Policy.</span>
+        <span className='text-black text-center'> Terms of use & Privacy Policy.</span>
         </p>
       </div>
       </div>
