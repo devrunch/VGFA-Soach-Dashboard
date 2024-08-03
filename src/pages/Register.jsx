@@ -99,7 +99,7 @@ const Register = () => {
     } = formValues;
 
     if (!firstName || !lastName || !email || !phoneNumber || !designation || !address ||
-      !panchayatName || !state || !city || !officeAddress) {
+      !panchayatName || !state || !officeAddress) {
       toast.error("Please fill all the fields");
     } else if (!validateEmail(email)) {
       toast.error("Please enter a valid email address");
@@ -274,6 +274,12 @@ const Register = () => {
     const state = event.target.value;
     setSelectedState(state);
     setCities(stateCityData[state] || []);
+    setFormValues({
+      ...formValues,
+      state: state,
+      city: '',
+    });
+    setCities(stateCityData[value] || []);
   };
 
   return (
