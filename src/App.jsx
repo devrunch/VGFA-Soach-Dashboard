@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Success from "./pages/Success";
 const baseUrl = "https://vfgabackend.outhad.com/api/";
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/success" element={<Success/>} />
         <Route path="/register" element={<Register />} />
       </Routes>
       <ToastContainer />
