@@ -2,11 +2,14 @@ import { useState } from 'react'
 import image from '../assets/soach.png'
 import uploadimg from '../assets/uploadimg.png'
 import uploadimg2 from '../assets/uploadimg2.png'
-
+import document from '../assets/document-text.png'
+import tick from '../assets/tick-circle.png'
 import '../css/style.css'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+
+import { useDropzone } from 'react-dropzone';
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -47,6 +50,15 @@ const Register = () => {
     console.log(e.target.files);
     setFile2(URL.createObjectURL(e.target.files[0]));
   }
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
+  const files = acceptedFiles.map(file => (
+    <li key={file.path}>
+      <p> {file.path}</p>
+      <p className='text-[#989692]'>{file.size} bytes </p>
+
+    </li>
+  ));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -478,18 +490,18 @@ const Register = () => {
                                   />
                                 </div>
                                 <div>
-                                <select
-                                  id="designation"
-                                  name="designation"
-                                  onChange={handleInputChange}
-                                  required
-                                  className="block w-full rounded-md border-0 p-3 text-sm mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:leading-6 bg-[#fff]"
-                                >
-                                  <option value="">Select Designation</option>
-                                  <option value="Panchayat-Pradhan">Panchayat Pradhan</option>
-                                  <option value="Panchayat-Secretary">Panchayat Secretary</option>
-                                  <option value="Gram-Panchayat-Member">Gram Panchayat Member</option>
-                                </select>
+                                  <select
+                                    id="designation"
+                                    name="designation"
+                                    onChange={handleInputChange}
+                                    required
+                                    className="block w-full rounded-md border-0 p-3 text-sm mt-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:leading-6 bg-[#fff]"
+                                  >
+                                    <option value="">Select Designation</option>
+                                    <option value="Panchayat-Pradhan">Panchayat Pradhan</option>
+                                    <option value="Panchayat-Secretary">Panchayat Secretary</option>
+                                    <option value="Gram-Panchayat-Member">Gram Panchayat Member</option>
+                                  </select>
                                 </div>
                                 <div>
                                   <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -615,7 +627,46 @@ const Register = () => {
                                         <h2 className='font-semibold  text-xl p-4 mt-5'>Address Proof</h2>
                                         <p className='text-[#727476]  p-4 font-normal'>eg: bill, Aadhar card.</p>
                                       </div>
+
+                                      <div {...getRootProps({ className: 'dropzone' })}>
+                                        <input {...getInputProps()} />
+                                        {acceptedFiles.length === 0 ?
+                                          <>
+                                            <img className='w-14' src={file2} />
+                                            <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                            <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          </>
+                                          :
+                                          <div className='w-full'>
+                                          <aside className='flex justify-around w-full items-stretch'>
+                                            <div>
+                                              <img src={document} alt="Document" />
+                                            </div>
+                                            <div>
+                                              <ul className='font-medium'>
+                                                {files}
+                                              </ul>
+                                            </div>
+                                            <div>
+                                              <img src={tick} alt="Document" />
+                                            </div>
+                                          </aside>
+                                          <div className="w-full  rounded-full h-6 flex items-center mt-4">
+                                            <div className="bg-green-500 h-2 rounded-full flex items-center justify-end px-2 text-white font-semibold" style={{ width: '100%' }}>
+                                              
+                                            </div>
+                                            <span className="ml-2">100%</span>
+                                          </div>
+                                        </div>
+
+                                        }
+
+
+                                      </div>
+
+
                                       <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
+
 
                                         <img src={file2} />
                                         <div className='flex flex-col gap-2 justify-center '>

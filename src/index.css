@@ -134,3 +134,15 @@ body{
   font-weight: 900;
   font-style: italic;
 }
+
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
