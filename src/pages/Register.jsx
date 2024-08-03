@@ -60,6 +60,23 @@ const Register = () => {
     </li>
   ));
 
+  const { acceptedFiles: acceptedFilesaddress, getRootProps: getRootPropsaddress, getInputProps: getInputPropsaddress } = useDropzone();
+  const filesaddress = (acceptedFilesaddress || []).map(file => (
+    <li key={file.path}>
+      <p>{file.path}</p>
+      <p className='text-[#989692]'>{file.size} bytes</p>
+    </li>
+  ));
+
+  const { acceptedFiles: acceptedFilesresolution, getRootProps: getRootPropsresolution, getInputProps: getInputPropsresolution } = useDropzone();
+  const filesresolution = (acceptedFilesresolution || []).map(file => (
+    <li key={file.path}>
+      <p>{file.path}</p>
+      <p className='text-[#989692]'>{file.size} bytes</p>
+    </li>
+  ));
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -631,11 +648,11 @@ const Register = () => {
                                       <div {...getRootProps({ className: 'dropzone' })}>
                                         <input {...getInputProps()} />
                                         {acceptedFiles.length === 0 ?
-                                          <>
+                                         <div className='h-[20vh] flex flex-col items-center justify-center gap-4'>
                                             <img className='w-14' src={file2} />
                                             <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
                                             <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          </>
+                                          </div>
                                           :
                                           <div className='w-full'>
                                           <aside className='flex justify-around w-full items-stretch'>
@@ -665,33 +682,46 @@ const Register = () => {
                                       </div>
 
 
-                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
-
-
-                                        <img src={file2} />
-                                        <div className='flex flex-col gap-2 justify-center '>
-                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
-                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input
-                                            type="file" className=' text-center' onChange={handleImgChange2} />
-                                        </div>
-
-                                      </div>
+                                   
                                     </div>
                                     <div className='w-1/2'>
                                       <div className=' border-[#EDEDED] border-b-2 '>
                                         <h2 className='font-semibold   text-xl p-4 mt-5'>Identity Proof</h2>
                                         <p className='text-[#727476]  p-4 font-normal'>e.g., Aadhaar Card, Voter ID</p>
                                       </div>
-                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
-
-                                        <img src={file2} />
-                                        <div className='flex flex-col gap-2 justify-center '>
-                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
-                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input
-                                            type="file" className=' text-center' onChange={handleImgChange2} />
+                                      <div {...getRootPropsaddress({ className: 'dropzone' })}>
+                                        <input {...getInputPropsaddress()} />
+                                        {acceptedFilesaddress.length === 0 ?
+                                         <div className='h-[20vh] flex flex-col items-center justify-center gap-4'>
+                                            <img className='w-14' src={file2} />
+                                            <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                            <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          </div>
+                                          :
+                                          <div className='w-full'>
+                                          <aside className='flex justify-around w-full items-stretch'>
+                                            <div>
+                                              <img src={document} alt="Document" />
+                                            </div>
+                                            <div>
+                                              <ul className='font-medium'>
+                                                {filesaddress}
+                                              </ul>
+                                            </div>
+                                            <div>
+                                              <img src={tick} alt="Document" />
+                                            </div>
+                                          </aside>
+                                          <div className="w-full  rounded-full h-6 flex items-center mt-4">
+                                            <div className="bg-green-500 h-2 rounded-full flex items-center justify-end px-2 text-white font-semibold" style={{ width: '100%' }}>
+                                              
+                                            </div>
+                                            <span className="ml-2">100%</span>
+                                          </div>
                                         </div>
+
+                                        }
+
 
                                       </div>
                                     </div>
@@ -706,15 +736,39 @@ const Register = () => {
                                         <h2 className='font-semibold  text-xl p-4 mt-5'>Panchayat Resolution</h2>
                                         <p className='text-[#727476]  p-4 font-normal'>(if applicable)</p>
                                       </div>
-                                      <div className='flex flex-col items-center justify-center gap-8 border-[#CACACA] border-dashed border-[1.23px] rounded-lg   py-8'>
-
-                                        <img src={file2} />
-                                        <div className='flex flex-col gap-2 justify-center '>
-                                          <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
-                                          <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
-                                          <input
-                                            type="file" className=' text-center' onChange={handleImgChange2} />
+                                      <div {...getRootPropsresolution({ className: 'dropzone' })}>
+                                        <input {...getInputPropsresolution()} />
+                                        {acceptedFilesresolution.length === 0 ?
+                                          <div className='h-[20vh] flex flex-col items-center justify-center gap-4'>
+                                            <img className='w-14' src={file2} />
+                                            <h2 className='font-semibold text-[#F5705E] text-center'>Click to Upload</h2>
+                                            <p className='text-[#727476] font-normal text-center'> (Max. File size: 25 MB)</p>
+                                          </div>
+                                          :
+                                          <div className='w-full'>
+                                          <aside className='flex justify-around w-full items-stretch'>
+                                            <div>
+                                              <img src={document} alt="Document" />
+                                            </div>
+                                            <div>
+                                              <ul className='font-medium'>
+                                                {filesresolution}
+                                              </ul>
+                                            </div>
+                                            <div>
+                                              <img src={tick} alt="Document" />
+                                            </div>
+                                          </aside>
+                                          <div className="w-full  rounded-full h-6 flex items-center mt-4">
+                                            <div className="bg-green-500 h-2 rounded-full flex items-center justify-end px-2 text-white font-semibold" style={{ width: '100%' }}>
+                                              
+                                            </div>
+                                            <span className="ml-2">100%</span>
+                                          </div>
                                         </div>
+
+                                        }
+
 
                                       </div>
                                     </div>
