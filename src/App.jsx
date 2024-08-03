@@ -41,7 +41,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/success" element={<Success/>} />
-        <Route path="/register" element={<Register />} />
       </Routes>
       <ToastContainer />
     </>

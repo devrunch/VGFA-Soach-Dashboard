@@ -3,7 +3,7 @@ import image from '../assets/soach .png'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import saly from "../assets/Saly-10.png"
-
+import PasswordReset from '../components/PasswordReset'
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 const baseUrl = "https://vfgabackend.outhad.com/api/";
@@ -41,6 +41,14 @@ const Login = () => {
       setLoading(false)
 
   }
+
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   return (
     <div className='flex h-screen p-8'>
       
@@ -96,9 +104,11 @@ const Login = () => {
                   className="block w-full rounded-md border-0 py-1.5 pl-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
-              <p htmlFor="email" className="block text-sm float-end mt-4 mb-12 underline font-medium leading-6 text-[#9C9AA5]">
+              <p htmlFor="email" onClick={handleShow} className="block text-sm float-end mt-4 mb-12 underline font-medium leading-6 text-[#9C9AA5]">
                 Forgot Password ?
               </p>
+
+              <PasswordReset show={show} handleClose={handleClose}/>
             </div>
 
             <div>
@@ -106,7 +116,7 @@ const Login = () => {
                 type="submit"
                 onClick={handleSubmit}
                 disabled={loading}
-                 className="flex w-full justify-center rounded-md bg-[#f5705e] p-4  text-base font-semibold leading-6 text-white shadow-sm hover:bg-[#e74b36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 self-end"
+                 className="flex w-full justify-center rounded-md bg-[#f5705e] p-3  text-base font-semibold leading-6 text-white shadow-sm hover:bg-[#e74b36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 self-end"
               >
                 Log-in
               </button>
