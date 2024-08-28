@@ -77,25 +77,35 @@ const Register = () => {
   ));
 
 
-  const handleSubmit = async (e) => {
+  const handlePanchayatSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    const raw = JSON.stringify({
-      email: email,
-      password: password
-    });
 
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow"
-    };
+    const mappedData = {
+      name: `${formValues.firstName} ${formValues.lastName}`,
+      phone: formValues.phoneNumber,
+      email: formValues.email,
+      password: "Pass@123", 
+      designation: formValues.designation,
+      panchayat_name: formValues.panchayatName,
+      panchayat_samiti: formValues.city,
+      address_office: formValues.officeAddress,
+      address: formValues.address
+  };
 
-    let response = await fetch(baseUrl + "auth/official/register", requestOptions);
-    response = await response.json();
-    toast.error("Invalid Credentials");
-    setLoading(false);
+    try {
+      const response = await fetch(`https://43.204.91.129/api/auth/panchayat/register`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(mappedData)
+      });
+
+      const data = await response.json();
+      console.log('Success:', data);
+  } catch (error) {
+      console.error('Error:', error);
+  }
   };
 
   const handleOptionChange = (value) => {
@@ -420,7 +430,7 @@ const Register = () => {
               {selectedDesignation === 'panchayat' ? (
                 <>
 
-                  <form  >
+                  <form onSubmit={handlePanchayatSubmit} >
 
                     {!PanchayatS1 ? (
                       <>
@@ -449,7 +459,7 @@ const Register = () => {
                               <div className='flex flex-col gap-4 py-6'>
                                 <div className='flex gap-4'>
                                   <div className='w-1/2'>
-                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
                                       First Name
                                     </label>
                                     <input
