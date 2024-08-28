@@ -845,7 +845,7 @@ const Register = () => {
                 </>
 
               ) : (
-                <form  >
+                <form onSubmit={handleOfficialSubmit} >
 
                   {!PanchayatS1 ? (
                     <>
