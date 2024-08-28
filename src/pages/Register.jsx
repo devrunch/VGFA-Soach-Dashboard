@@ -82,18 +82,52 @@ const Register = () => {
 
     const mappedData = {
       name: `${formValues.firstName} ${formValues.lastName}`,
-      phone: formValues.phoneNumber,
+      phone: `+91${formValues.phoneNumber}`,
       email: formValues.email,
       password: "Pass@123", 
       designation: formValues.designation,
       panchayat_name: formValues.panchayatName,
       panchayat_samiti: formValues.city,
       address_office: formValues.officeAddress,
-      address: formValues.address
+      address_residence: formValues.address
   };
 
     try {
-      const response = await fetch(`https://43.204.91.129/api/auth/panchayat/register`, {
+      const response = await fetch(`https://vfgabackend.soachglobal.com/api/auth/panchayat/register`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(mappedData)
+      });
+
+      const data = await response.json();
+      console.log('Success:', data);
+  } catch (error) {
+      console.error('Error:', error);
+  }
+  };
+
+
+
+
+  const handleOfficialSubmit = async (e) => {
+    e.preventDefault();
+
+    const mappedData = {
+      name: `${formValues.firstName} ${formValues.lastName}`,
+      phone: `+91${formValues.phoneNumber}`,
+      email: formValues.email,
+      password: "Pass@123", 
+      designation: formValues.designation,
+      panchayat_name: formValues.panchayatName,
+      // panchayat_samiti: formValues.city,
+      address_office: formValues.officeAddress,
+      address_residence: formValues.address
+  };
+
+    try {
+      const response = await fetch(`https://vfgabackend.soachglobal.com/api/auth/official/register`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -811,7 +845,7 @@ const Register = () => {
                 </>
 
               ) : (
-                <form  >
+                <form onSubmit={handleOfficialSubmit} >
 
                   {!PanchayatS1 ? (
                     <>
