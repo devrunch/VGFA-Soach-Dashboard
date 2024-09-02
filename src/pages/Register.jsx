@@ -42,7 +42,9 @@ const [panchayatResolution, setPanchayatResolution] = useState(null);
     panchayatName: '',
     state: '',
     city: '',
-    officeAddress: ''
+    officeAddress: '',
+    password:'',
+    confirmpassword:''
   });
 
   function handleImgChange(e) {
@@ -214,6 +216,9 @@ const [panchayatResolution, setPanchayatResolution] = useState(null);
       toast.error("Please enter a valid phone number");
     } else {
       setPanchayatS1(true);
+    }
+    if(formValues.password !==formValues.confirmpassword){
+      toast.error(`Password and Confirm Password does not match `);
     }
   };
 
@@ -611,6 +616,38 @@ const [panchayatResolution, setPanchayatResolution] = useState(null);
                                     className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                   />
                                 </div>
+                                
+                                <div className='flex gap-4'>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
+                                      Password
+                                    </label>
+                                    <input
+                                      onChange={handleInputChange}
+
+                                      id="password"
+                                      name="password"
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
+                                    />
+                                  </div>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Confirm Password
+                                    </label>
+                                    <input
+                                      onChange={handleInputChange}
+
+                                      id="confirmpassword"
+                                      name="confirmpassword"
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
+                                    />
+                                  </div>
+
+                                </div>
                               </div>
                             </div>
                             <div>
@@ -964,6 +1001,37 @@ const [panchayatResolution, setPanchayatResolution] = useState(null);
                                   className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                 />
                               </div>
+                              <div className='flex gap-4'>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
+                                      Password
+                                    </label>
+                                    <input
+                                      onChange={handleInputChange}
+
+                                      id="password"
+                                      name="password"
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
+                                    />
+                                  </div>
+                                  <div className='w-1/2'>
+                                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                                    Confirm Password
+                                    </label>
+                                    <input
+                                      onChange={handleInputChange}
+
+                                      id="confirmpassword"
+                                      name="confirmpassword"
+                                      type="text"
+                                      required
+                                      className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
+                                    />
+                                  </div>
+
+                                </div>
                             </div>
                           </div>
                           <div>
@@ -1037,6 +1105,7 @@ const [panchayatResolution, setPanchayatResolution] = useState(null);
                                   className="block w-full rounded-md border-0 p-3 text-lg mt-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset  sm:leading-6 bg-[#fff]"
                                 />
                               </div>
+                              
                               <button
                                 onClick={handlePanchayatS1}
                                 type='button'
