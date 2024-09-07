@@ -38,7 +38,7 @@ function PasswordReset({ show, handleClose }) {
                         </label>
                         <div className="mt-2">
                             <input
-                                id="email"
+                                id="email_"
                                 name="email"
                                 type="email"
                                 value={resetEmail}
