@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.4.0",
     "@headlessui/react": "^2.0.4",
+    "clsx": "^2.1.1",
     "dashboard": "file:",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

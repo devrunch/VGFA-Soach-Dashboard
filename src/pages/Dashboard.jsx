@@ -18,7 +18,7 @@ myHeaders.append("Authorization", "Bearer " + localStorage.getItem('vgfatoken'))
 const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 function Dashboard() {
   const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
-  const [email, setEmail] = useState("");
+  const [user, setUser] = useState("");
   const [data, setData] = useState();
   const navigate = useNavigate();
 
@@ -29,11 +29,20 @@ function Dashboard() {
       headers: myHeaders,
       redirect: "follow"
     };
-    const response = await fetch(baseUrl + "auth/official/me", requestOptions);
+    let selecteduser = localStorage.getItem('vgfauser');
+    console.log(selecteduser)
+    let response;
+    if (selecteduser === 'panchayat') {
+      response = await fetch(baseUrl + "auth/panchayat/me", requestOptions);
+    }
+    else {
+      response = await fetch(baseUrl + "auth/official/me", requestOptions);
+    }
+
     if (response.status === 401) navigate("/login");
     const res = await response.json();
     console.log(res)
-    setEmail(res.message.email);
+    setUser(res.data.message);
   }
   const fetchData = async () => {
     const requestOptions = {
@@ -45,27 +54,26 @@ function Dashboard() {
     const res = await response.json();
     if (response.status === 401) navigate("/login");
     console.log(res.forms)
-    setData(res.forms);
+    setData(res.data.forms);
   }
 
   return (
     <div className="relative min-h-screen md:flex">
-      <Sidebar setExpand={setSideMenuIsExpand} email={email} />
+      <Sidebar />
       <div
-        className={`flex-1 min-h-screen mx-0 bg-slate-100 transition-all duration-300 ease-in-out ${sideMenuIsExpand ? "md:ml-72" : "md:ml-20"
-          }`}
+        className={`flex-1 min-h-screen mx-0 transition-all duration-300 ease-in-out ml-56`}
       >
-        <Navbar />
-        <div className="bg-[#fff]">
+        <Navbar email={user.email} name={user.name} />
+        <div className="bg-[#FEFAF6]">
           <div className="container mx-auto px-4 py-6 ">
-            <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
-            <p className="text-slate-600 mb-8">Welcome to your dashboard</p>
+            <h1 className="text-3xl font-semibold text-red-500 font-poppins">Dashboard</h1>
+            <p className="text-slate-600 mb-8 text-sm">Welcome, {user.name}</p>
             <div className="flex flex-nowrap justify-around w-full max-w-[1400px] hidden">
               <GridItem title="Sales">
                 {/* <AreaGraph /> */}
                 {/* <img src={image1} alt="" className="aspect-video object-contain" /> */}
                 <h1 className="text-3xl mb-5">Total Forms Listed</h1>
-                <h1 className="text-6xl font-bold">{data?data.length : '-'}</h1>
+                <h1 className="text-6xl font-bold">{data ? data.length : '-'}</h1>
               </GridItem>
 
               <GridItem title="Listings">
@@ -83,12 +91,15 @@ function Dashboard() {
                 <img src={image1} alt="" className="aspect-video object-contain" />
               </GridItem>
             </div>
+
             {
-              data && data.length ? (
+              data && data.length ? (<>
+                <h2 className="text-xl mb-1 font-semibold text-red-500 font-poppins">Farmers List</h2>
                 <div className="flex w-full justify-between">
                   <Table data={data} fetchData={fetchData} />
                   <ListComponent />
                 </div>
+              </>
               ) : (<div className="flex justify-center items-center h-[200px]">  <h1 className="text-2xl text-gray-600">No data available</h1></div>)
             }
           </div>

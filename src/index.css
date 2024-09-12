@@ -4,7 +4,9 @@
 @tailwind utilities;
 
 
-
+#root{
+  background-color: #FCF2E8;
+}
 
 .or-gradient {
   background: rgb(241, 76, 31);

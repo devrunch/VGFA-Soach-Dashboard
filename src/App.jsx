@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Success from "./pages/Success";
+import Profile from "./pages/Profile";
 const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       headers: myHeaders,
       redirect: "follow"
     };
-    const response = await fetch(baseUrl+"auth/official/me",requestOptions);
+    const response = await fetch(baseUrl+"auth/panchayat/me",requestOptions);
     if(response.status === 401) navigate("/login");
     else navigate("/dashboard");
     const res = await response.json();
@@ -41,6 +42,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/success" element={<Success/>} />
+        <Route path="/profile" element={<Profile/>} />
       </Routes>
       <ToastContainer />
     </>

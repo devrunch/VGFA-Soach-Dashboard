@@ -89,36 +89,36 @@ const Table = ({ data, fetchData }) => {
             {data && (
                 <div className="relative overflow-x-auto shadow-lg">
                     <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-                        <thead className="text-xs text-gray-50 uppercase or-gradient2 bg-[#ffb163]">
-                            <tr>
-                                <th scope="col" className="px-6 py-3 text-center">Farmer name</th>
-                                <th scope="col" className="px-6 py-3 text-center">Crops</th>
-                                <th scope="col" className="px-6 py-3 text-center">VGFA Units</th>
-                                <th scope="col" className="px-6 py-3 text-center">Land Area Owned</th>
-                                <th scope="col" className="px-6 py-3 text-center">Status</th>
-                                <th scope="col" className="px-6 py-3 text-center">Date Applied</th>
-                                <th scope="col" className="px-6 py-3 text-center">Action</th>
+                        <thead className="text-xs text-gray-900 uppercase  bg-[#FCF2E8]">
+                            <tr className='border-b border-red-300'>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">Farmer name</th>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">Crops</th>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">VGFA Units</th>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">Land Area Owned</th>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">Status</th>
+                                <th scope="col" className="px-6 py-3  border-r border-red-300">Date Applied</th>
+                                <th scope="col" className="px-6 py-3 ">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.length > 0 && data.map((form) => (
-                                <tr key={form._id} className="bg-white border-b text-gray-900">
-                                    <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
+                                <tr key={form._id} className="bg-white border-b border-red-300 text-gray-900">
+                                    <td scope="row" className="px-6 py-4 font-medium whitespace-nowrap border-r border-red-300">
                                         {form.farmer ? (<>
-                                        <div className='flex items-center gap-x-2'>
+                                        <div className='flex items-center gap-x-2 '>
                                             <img src={form.farmer.imageUrl} alt="" className='w-8 h-8 object-cover rounded-full' />
                                             <p>
                                                 {form.farmer.first_name + " " + form.farmer.last_name}
                                             </p>
                                         </div>
                                         </>) : 'N/A'}
-                                    </th>
-                                    <td className="px-6 py-4 text-center">{form.cropType}</td>
-                                    <td className="px-6 py-4 text-center">{form.vgfaUnitEq}</td>
-                                    <td className="px-6 py-4 text-center">{form.landArea}</td>
-                                    <td className="px-6 py-4 text-center">{state[form.state]}</td>
-                                    <td className="px-6 py-4 text-center">{form.createdAt ? new Date(form.createdAt).toLocaleDateString() : 'N/A'}</td>
-                                    <td className="px-6 py-4 text-center">
+                                    </td>
+                                    <td className="px-6 py-4 border-r border-red-300">{form.cropType}</td>
+                                    <td className="px-6 py-4 border-r border-red-300">{form.vgfaUnitEq}</td>
+                                    <td className="px-6 py-4 border-r border-red-300">{form.landArea}</td>
+                                    <td className="px-6 py-4 border-r border-red-300">{state[form.state]}</td>
+                                    <td className="px-6 py-4 border-r border-red-300">{form.createdAt ? new Date(form.createdAt).toLocaleDateString() : 'N/A'}</td>
+                                    <td className="px-6 py-4">
                                         <button
                                             className="text-blue-600 hover:underline"
                                             onClick={() => openModal(form)}

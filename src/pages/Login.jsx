@@ -2,7 +2,6 @@ import { useState } from 'react';
 import image from '../assets/soach .png'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import saly from "../assets/Saly-10.png"
 import PasswordReset from '../components/PasswordReset'
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
@@ -26,36 +25,35 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
+
     try {
       setSelectedDesignation(selectedOption);
-  
+
       if (!email.trim() || !password.trim() || !selectedDesignation) {
         toast.error('Email, Password, and Designation cannot be empty');
         setLoading(false);
         return;
       }
-  
+
       const raw = JSON.stringify({
         email: email.trim(),
         password: password.trim(),
       });
-  
+
       const requestOptions = {
         method: "POST",
         headers: myHeaders,
         body: raw,
         redirect: "follow",
       };
-  
+
       let response;
-  
+
       if (selectedOption === "panchayat") {
         response = await fetch(`${baseUrl}/api/auth/panchayat/login`, requestOptions);
       } else {
         response = await fetch(`${baseUrl}/api/auth/official/login`, requestOptions);
       }
-  
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Login failed:', errorData);
@@ -63,11 +61,12 @@ const Login = () => {
         setLoading(false);
         return;
       }
-  
+
       const responseData = await response.json();
-  
-      if (responseData.token) {
-        localStorage.setItem('vgfatoken', responseData.token);
+
+      if (responseData.data.token) {
+        localStorage.setItem('vgfatoken', responseData.data.token);
+        localStorage.setItem('vgfauser', selectedDesignation);
         toast.success('Login Successful');
         await new Promise((resolve) => setTimeout(resolve, 4000));
         window.location.href = '/dashboard';
@@ -81,8 +80,8 @@ const Login = () => {
       setLoading(false);
     }
   };
-  
-  
+
+
 
   const [show, setShow] = useState(false);
 
@@ -137,7 +136,7 @@ const Login = () => {
                           {selectedOption ? (
 
                             options.find(option => option.value === selectedOption)?.label
-                            
+
                           ) : (
                             'Select an Option'
                           )}
