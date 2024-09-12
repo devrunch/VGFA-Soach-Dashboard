@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Success from "./pages/Success";
-const baseUrl = "https://vfgabackend.outhad.com/api/";
+const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 
 function App() {
   const navigate = useNavigate();

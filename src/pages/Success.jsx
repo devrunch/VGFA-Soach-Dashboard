@@ -7,7 +7,7 @@ import success from '../assets/success.png'
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-const baseUrl = "https://vfgabackend.outhad.com/api/";
+const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 const Success = () => {
 
     return (

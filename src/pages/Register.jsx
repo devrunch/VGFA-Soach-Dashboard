@@ -13,7 +13,7 @@ import { useDropzone } from 'react-dropzone';
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
-const baseUrl = "https://vfgabackend.outhad.com/api/";
+const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 
 const Register = () => {
   const navigate = useNavigate();

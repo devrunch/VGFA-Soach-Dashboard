@@ -15,7 +15,7 @@ import image3 from "../assets/Frame 17.png";
 import checkbox from "../assets/Component 3.svg";
 const myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer " + localStorage.getItem('vgfatoken'));
-const baseUrl = "https://vfgabackend.outhad.com/api/";
+const baseUrl = "https://vfgabackend.soachglobal.com/api/";
 function Dashboard() {
   const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
   const [email, setEmail] = useState("");
